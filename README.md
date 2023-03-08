@@ -19,7 +19,7 @@ I'm a Backend developer PHP
 
 ## Database Structure
 
-![Database Structure](https://github.com/[faresbat99]/[Simple_SCURD_Operation]/blob/[main]/db.png?raw=true)
+![Database Structure](https://github.com/[faresbat99]/[Simple_SCURD_Operation]/[main]/db.png?raw=true)
 
 
 
