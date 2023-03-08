@@ -1,26 +1,21 @@
 # Simple_SCURD_Operation
-create small curd system using php
+Create small curd system using php
 
 ## Features :
 - simple using native php
 - handling errors
 - followed security concepts
 
-
-
 ## Tech Stack
 
 **Server:** php, mysql
-
-
-## 🚀 About Me
-I'm a Backend developer PHP 
-
 
 ## Database Structure
 
 ![Database Structure](https://github.com/faresbat99/Simple_SCURD_Operation/blob/main/db.png?raw=true)
 
+## 🚀 About Me
+I'm a Backend developer PHP 
 
 
 ## 🔗 Links
