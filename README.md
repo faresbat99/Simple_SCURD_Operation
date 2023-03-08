@@ -9,7 +9,8 @@ Create small curd system using php
 ## Tech Stack
 
 **languages:** 
-![Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Webysther_20160423_-_Elephpant.svg/2560px-Webysther_20160423_-_Elephpant.svg.png)
+- PHP
+- MySQL
 
 ![Logo](https://www.freepnglogos.com/uploads/logo-mysql-png/logo-mysql-mysql-logo-png-images-are-download-crazypng-21.png)
 
