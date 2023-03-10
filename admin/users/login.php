@@ -19,9 +19,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($row = mysqli_fetch_assoc($result)) {
         // if (password_verify($_POST['password'], $hash)) {
-            $_SESSION["id"] = $row["id"];
-            $_SESSION["name"] = $row["name"];
-            header("Location: list.php");
+        $_SESSION["id"] = $row["id"];
+        $_SESSION["name"] = $row["name"];
+        header("Location: list.php");
         // } else
         //     $error = "Invalid Password";
     } else {
@@ -53,11 +53,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <table>
             <tr>
                 <td> <label for="text">Email</label></td>
-                <td> <input type="email" name="email" id="email" value=<?= isset($_POST['email']) ? $_POST['email'] : '' ?>></td>
+                <td> <input type="email" name="email" id="email" required value=<?= isset($_POST['email']) ? $_POST['email'] : '' ?>></td>
             </tr>
             <tr>
                 <td> <label for="text">Password</label></td>
-                <td><input type="password" name="password" id="password" value=<?= isset($_POST['password']) ? $_POST['password'] : '' ?>></td>
+                <td><input type="password" name="password" id="password" required value=<?= isset($_POST['password']) ? $_POST['password'] : '' ?>></td>
             </tr>
         </table>
         <input type="submit" value="Login">

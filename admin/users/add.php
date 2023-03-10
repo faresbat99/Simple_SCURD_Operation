@@ -1,6 +1,6 @@
 <?php
 session_start();
-if ($_SESSION["id"]==null) {
+if ($_SESSION["id"] == null) {
     header("Location: login.php");
 }
 // check if the All input is set and return the error message in array
@@ -52,22 +52,30 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") { // لازم تتحفظ و خد با�
                 exit;
             }
         }
-        
-        $query = "INSERT INTO `users` (`name`, `email`, `password`,`avatar`, `admin`) VALUES ('" . $name . "', '" . $email . "', '" . $password . "', '" . $avatar . "', '" . $admin . "');";
-        
 
-try {
-    
-    // execute and redirect
-    if (mysqli_query($conn, $query)) {
-        header("Location: list.php");
-        exit;
-    } else {
-        echo mysqli_error($conn);
-    }
-} catch (Exception $e) {
-    echo "Duplicate the user email";
-}
+        // $query = mysqli_prepare($conn,"INSERT INTO `users` (`name`, `email`, `password`,`avatar`, `admin`) VALUES ('" . $name . "', '" . $email . "', '" . $password . "', '" . $avatar . "', '" . $admin . "');");
+
+        //preform prepare statement => instead of escaping to avoid sql injection 
+        //  s i - integer
+        // s - string
+        // b - BLOB
+        // d - double
+        $query = mysqli_prepare($conn, "INSERT INTO `users` (`name`, `email`, `password`,`avatar`, `admin`) VALUES (?,?,?,?,?)");
+        $query->bind_param("ssssi", $name, $email, $password, $avatar, $admin);
+
+
+        try {
+
+            // execute and redirect
+            if ($query->execute()) {
+                header("Location: list.php");
+                exit;
+            } else {
+                echo mysqli_error($conn);
+            }
+        } catch (Exception $e) {
+            echo "Duplicate the user email";
+        }
         //close the connection  
         mysqli_close($conn);
     }
